@@ -1,7 +1,7 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
-date: '2022-11-01'
+title: "Analyzing relations of prison population, location, and social identity"
+author: "Hannah Wee"
+date: '2022-11-21'
 output: html_document
 ---
 
@@ -11,35 +11,51 @@ source("../source/analysis.R")
 ```
 
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
 
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
+My main concern is the correlation between prison population by identity, intersectionality, and system of oppression. My question is how does social identities, specifically gender, affect inequality patterns of prisoner population? To address this question, I analyzed data sets in different social identities and filtered location and gender information about prison population to visualize the datasets. 
 
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
 
 ## Introduction 
-[TODO]
+
+As mentioned in *Data Feminism*, Data feminists should not only be aware of the inequality in the world but also act to improve the inequality in our world. By examining and visualizing the prison data sets, I hope to find evidence of apparent inequality patterns in our society. Racism and sexism are still apparent in our society so through visualizing and organizing raw data sets, I hope it can convey values of activism and action towards direct stakeholders, sociologists or government officials, and indirect stakeholders, viewers, or audience of visualization, to make the world a more inviting place for all identities. The inequalities portrayed through visualization serve as a purpose to not only support evidence that there are inequalities in our society to viewers but also bring change to the inequality by impacting the government officials who are in charge of making and editing laws of society. As a data feminist mindset, the goal is to make an impact on dissolving apparent inequalities using data which is what this project is aimed to do. 
 
 ## Data Summary 
-[TODO]
 
-[TODO ... other sections ... See Canvas for details]
+### Growth of US Prison Population 
+```{r chart1, echo = FALSE} 
+plot_jail_pop_for_us() 
+```
+
+The bar graph portrays positive correlation between total jail population and as year passes and although there could be many outside factors that could have affected the growth rate of prisoners, but it illustrates that prisoners have overall increased as time passed. This also answers the question of how frequent crimes happen in US by looking at number of prisoners in US? There is an increase of about 500,000 - 600,000 total jail population from years 1970s to 2020s which can raise slight concern of security within our society. The highest total_jail_population was year 2018 when it reached to almost 800,000 jail population which is comparatively very recent. 
+
+### Growth of US Prison Population by State
+``` {r chart2, echo = FALSE}
+
+plot_jail_pop_by_states()
+```
+
+The line chart clearly demonstrates growth rate of prison population by state by distinguishing each state by different color. The relationship between total jail state population and year progression overall shows a positive correlation of increasing prisoners overall the past decades.This answers the question of which location is the US has comparatively more or less prisoners? California rapidly rose of 40,000 total jail population from years 1980s to 1990s and then continued to steadly rise from the most recent data. There is a difference of about 60,000  total jail population between California and other three states, which emphasizes that California has significantly more prisoners than Alabama, Oregon, of Washington. This can lead to predictions of the environment in California may increase the likelihood of committing a crime. 
+
+### Growth of US Prison Population by Gender
+```{r chart3, echo = FALSE}
+plot_gender_jail_pop()
+```
+
+The scatter plot is specifically chosen to answer the question of is there are inequality pattern of prisoners among gender? There seems to be an overall positive correlation of female and male population but looking at the scales for male and female jail population, it can be seen that there are more male jail population than female jail population. The color scheme also shows the year of when population was recorded and it shows that there are diverse amounts of population of both genders throughout the year progressed. The scale for male jail population is 20,000 but female jail population is only 3,000 max which indicates a pattern of inequality in terms of there are more male prisoners than female prisoners by a huge difference. 
+
+### Total population of female prison by state 
+```{r chart4, echo = FALSE}
+plot_female_state_jail_pop()
+```
+
+The map answers the question of which state has the most and least female prisoners? The map is useful because it brings the sum of female population of each state and by observing the color scale, California, Texas, and Florida seems to have the higher record for female population. This shows that the southeast states tend to have high criminal rates but compared to male scale, 2500000, which is shown below  female jail population map, and female scale, 300000, shows that max female prisoner is not even near minimum male population. 
+
+### Total population of male prison by states
+```{r chart5, echo = FALSE}
+plot_male_state_jail_pop()
+```
+
+The map answer the question: are there inequality between binary genders, male and female, of becoming prisoners? The male population scale shows a higher maximum number than female population by around 2,200,000 people, which is overall overwhelmingly different from number of women prisoners. The location overall stayed the same for number of prisoners per state for both gender by having north middle part of US with lowest and south states like Californian or Texas having the highest, but the recorded values for prisoners shows the huge difference between binary genders, proving that our society have more male prisoners than female prisoners. 
 
 _All the very best with your work!_
 
